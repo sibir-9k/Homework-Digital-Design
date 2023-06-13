@@ -1,0 +1,19 @@
+{
+  "name": "homework-digital-design",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sibir-9k/Homework-Digital-Design.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sibir-9k/Homework-Digital-Design/issues"
+  },
+  "homepage": "https://github.com/sibir-9k/Homework-Digital-Design#readme"
+}
