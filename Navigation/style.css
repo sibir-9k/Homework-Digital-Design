@@ -1,0 +1,74 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  --nav-bg-color: #1f75cb;
+  --main-color: white;
+  --text-hover-color: black;
+}
+.navigation {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	background: var(--nav-bg-color);
+	height: 90px;
+	width: 1024px;
+	margin: 0 auto;
+}
+.navigation-list {
+	display: flex;
+	justify-content: flex-end;
+	margin: 0;
+}
+.navigation-item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	list-style-type: none;
+	margin-right: 24px;
+}
+.navigation-item button {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 19px;
+	color: var(--main-color);
+	text-decoration: none;
+  background-color: inherit;
+  border: none;
+  padding: 11.5px 16px;
+  border-radius: 4px;
+}
+.navigation-item button:hover {
+  cursor: pointer;
+	color: var(--text-hover-color);
+  background: var(--main-color);
+	border: inherit;
+}
+.user-img {
+	display: flex;
+	align-items: center;
+	margin-right: 72px;
+  padding: 9px 16px;
+}
+.user-img:hover {
+	border: 1px solid var(--main-color);
+	border-radius: 4px;
+}
+.user-img:active {
+  background-color: var(--main-color);
+}
+.user-img img {
+	border-radius: 50%;
+	margin-right: 8px;
+}
+.user-img button {
+	background-color: inherit;
+	border: none;
+}
+.user-img button img{
+  margin: 0;
+}

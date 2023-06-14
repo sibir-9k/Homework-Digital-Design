@@ -1,0 +1,26 @@
+body {
+	margin: 0 auto;
+	padding: 100px;
+}
+.plug {
+	display: flex;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	border-radius: 4px;
+	align-items: center;
+	justify-content: center;
+	padding: 150px 100px;
+	flex-direction: column;
+	width: 900px;
+}
+span{
+  margin-bottom: 10px;
+}
+button {
+	width: 98px;
+	height: 42px;
+	background: #1f75cb;
+	border-radius: 4px;
+  color: white;
+  border: inherit;
+  cursor: pointer;
+}
