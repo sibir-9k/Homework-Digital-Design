@@ -1,5 +1,13 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+:root {
+	--btn-color: #1f75cb;
+  --btn-text-color: white;
+}
 body {
-	margin: 0 auto;
 	padding: 100px;
 }
 .plug {
@@ -11,16 +19,17 @@ body {
 	padding: 150px 100px;
 	flex-direction: column;
 	width: 900px;
+	margin: 0 auto;
 }
-span{
-  margin-bottom: 10px;
+span {
+	margin-bottom: 10px;
 }
 button {
 	width: 98px;
 	height: 42px;
-	background: #1f75cb;
+	background: var(--btn-color);
 	border-radius: 4px;
-  color: white;
-  border: inherit;
-  cursor: pointer;
+	color: var(--btn-text-color);
+	border: inherit;
+	cursor: pointer;
 }
