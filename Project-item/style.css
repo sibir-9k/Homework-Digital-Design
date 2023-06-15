@@ -6,19 +6,30 @@
 :root {
 	--text-span-color: #8e8e8e;
 	--btn-bg-color: white;
+	--options-bg-color-hover: #ececef;
+	--options-bg-color-active: #dcdcde;
 }
 .project-item {
+	width: 100%;
 	display: flex;
 	flex-direction: column;
+}
+.project-item__title {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 19px;
+	padding: 0px 16px;
 }
 .project-item__block {
 	display: flex;
 	justify-content: space-between;
 	border-bottom: 1px solid black;
-	width: 900px;
 	align-items: flex-end;
+	padding: 19px 16px 8px;
 }
-.project-item__block:hover .project-item__block-right button {
+.project-item__block:hover .project-item__options {
 	display: block;
 }
 .project-item__block-left span,
@@ -35,11 +46,17 @@
 	display: flex;
 	align-items: flex-end;
 }
-.project-item__block-right button {
+.project-item__options {
 	margin-left: 16px;
 	display: none;
 	background-color: var(--btn-bg-color);
 	border: 1px solid rgba(0, 0, 0, 0.15);
 	border-radius: 4px;
 	cursor: pointer;
+}
+.project-item__options:hover {
+	background: var(--options-bg-color-hover);
+}
+.project-item__options:active {
+	background: var(--options-bg-color-active);
 }

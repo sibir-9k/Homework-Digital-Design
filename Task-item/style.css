@@ -8,17 +8,28 @@
 	--btn-bg-color: white;
 	--draft-text-color: white;
 	--draft-bg-color: #9e6955;
+	--options-bg-color-hover: #ececef;
+	--options-bg-color-active: #dcdcde;
 }
 .task-item {
 	display: flex;
 	flex-direction: column;
+	width: 100%;
+}
+.task-item__title {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 19px;
+	padding: 0px 16px;
 }
 .task-item__block {
 	display: flex;
 	justify-content: space-between;
 	border-bottom: 1px solid black;
-	width: 900px;
 	align-items: flex-end;
+	padding: 14px 16px 8px;
 }
 .task-item__block:hover .task-item__options {
 	display: block;
@@ -54,6 +65,9 @@
 	flex-direction: column;
 	align-items: flex-end;
 }
+.task-item__editor img {
+	border-radius: 50%;
+}
 .task-item__options {
 	margin-left: 16px;
 	display: none;
@@ -61,4 +75,10 @@
 	border: 1px solid rgba(0, 0, 0, 0.15);
 	border-radius: 4px;
 	cursor: pointer;
+}
+.task-item__options:hover {
+	background: var(--options-bg-color-hover);
+}
+.task-item__options:active {
+	background: var(--options-bg-color-active);
 }

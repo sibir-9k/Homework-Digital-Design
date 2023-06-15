@@ -14,7 +14,7 @@
 	justify-content: flex-end;
 	background: var(--nav-bg-color);
 	height: 90px;
-	width: 1024px;
+	width: 100%;
 	margin: 0 auto;
 }
 .navigation-list {
@@ -22,14 +22,14 @@
 	justify-content: flex-end;
 	margin: 0;
 }
-.navigation-item {
+.navigation__item {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	list-style-type: none;
 	margin-right: 24px;
 }
-.navigation-item button {
+.navigation__item button {
 	font-family: 'Open Sans';
 	font-style: normal;
 	font-weight: 400;
@@ -42,7 +42,7 @@
   padding: 11.5px 16px;
   border-radius: 4px;
 }
-.navigation-item button:hover {
+.navigation__item button:hover {
   cursor: pointer;
 	color: var(--text-hover-color);
   background: var(--main-color);
