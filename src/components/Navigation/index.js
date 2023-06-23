@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Document</title>
-</head>
-<body>
-  <nav class="navigation">
+function Navigation() {
+	return `
+    <nav class="navigation">
     <ul class="navigation__list">
       <li class="navigation__item">
         <button>Проекты</button>
@@ -20,12 +13,13 @@
       </li>
     </ul>
     <div class="user-img">
-      <img src="../assets/img/user.png" alt="" width="24" height="24">
+      <img src="../../assets/img/user.png" alt="" width="24" height="24">
       <button>
-        <img src="../assets/img/svg/user-arrow-down.svg" alt="">
+        <img src="../../assets/svg/user-arrow-down.svg" alt="">
       </button>
     </div>
     <div></div>
   </nav>
-</body>
-</html>
+    `;
+}
+export default Navigation;
