@@ -27,7 +27,7 @@ module.exports = {
 				use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
 			},
 			{
-				test: /\.(png|svg|jpg|jpeg|gif)$/i,
+				test: /\.(png|jpg|jpeg|gif)$/i,
 				type: 'asset/resource',
 				use: [
 					{
@@ -55,6 +55,10 @@ module.exports = {
 					},
 				],
 			},
+			{
+				test: /\.svg$/,
+				loader: 'svg-sprite-loader',
+			},
 		],
 	},
 	plugins: [
@@ -66,13 +70,16 @@ module.exports = {
 			filename: '[name].css',
 		}),
 	],
-
 	devServer: {
 		static: {
-			directory: path.join(__dirname, 'dist'), // Каталог, откуда будет раздаваться статика
+			directory: path.join(__dirname, 'dist'), 
 		},
-		open: true, // Автоматически открывать браузер после запуска сервера разработки
+		open: true,
 	},
-
-	mode: 'development', // Режим сборки (в данном случае - разработка)
+	resolve: {
+		alias: {
+			'@': path.resolve(__dirname, './src'),
+		},
+	},
+	mode: 'development',
 };

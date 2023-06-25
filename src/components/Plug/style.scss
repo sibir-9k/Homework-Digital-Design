@@ -1,21 +1,23 @@
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
+// * {
+// 	margin: 0;
+// 	padding: 0;
+// 	box-sizing: border-box;
+// }
 
 $btn-color: #1f75cb;
 $btn-hover-color: #1068bf;
 $btn-active-color: #0b5cad;
 $btn-text-color: white;
 
-body,
-html {
+body {
 	height: 100%;
+}
+html{
+  height: 100%;
 }
 .plug {
 	height: 100%;
-	padding: 24px 0;
+	padding: 24px 24px;
 	overflow-y: hidden;
 
 	.container {

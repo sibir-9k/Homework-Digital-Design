@@ -2,3 +2,14 @@
 @import "./components/Plug/style.scss";
 @import "./components/Project-item/style.scss";
 @import "./components/Task-item/style.scss";
+
+.app{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.content{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
