@@ -16,7 +16,8 @@ const postPrjectsXHR = () => {
 	xhr.onload = () => {
 		console.log('postPrjectsXHR - POST Создание проекта', xhr.response);
 		let project_Id = xhr.response._id;
-		projectID = localStorage.setItem('project_Id-xhr', JSON.stringify(project_Id));
+    projectID = project_Id
+		localStorage.setItem('project_Id-xhr', JSON.stringify(project_Id));
 	};
 	xhr.onerror = () => {
 		console.log(xhr.response);

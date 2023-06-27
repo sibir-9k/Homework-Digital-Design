@@ -1,6 +1,6 @@
 import { BASE_URL, token } from '../../index.js';
 
-const projectId = JSON.parse(localStorage.getItem('project_Id-axios'));
+const projectId = JSON.parse(localStorage.getItem('project_Id-fetch'));
 let taskId = null;
 
 // POST Создание задачи
@@ -27,7 +27,7 @@ const postTasksFetch = async () => {
 
 // GET Получение проекта по id
 const getTasksFetch = async () => {
-	let response = await fetch(`${BASE_URL}/tasks/${projectId}`, {
+	let response = await fetch(`${BASE_URL}/tasks/${taskId}`, {
 		method: 'GET',
 		headers: {
 			Authorization: `Bearer ${token}`,

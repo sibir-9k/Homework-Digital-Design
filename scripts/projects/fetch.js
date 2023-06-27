@@ -18,7 +18,8 @@ const postPrjectsFetch = async () => {
 
 	let result = await response.json();
 	let project_Id = result._id;
-	projectID = localStorage.setItem('project_Id-fetch', JSON.stringify(project_Id))
+	projectID = project_Id
+  localStorage.setItem('project_Id-fetch', JSON.stringify(project_Id))
 	console.log('postPrjectsFetch - POST Создание проекта');
 	console.log(result);
 };

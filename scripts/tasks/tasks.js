@@ -6,7 +6,7 @@ import tasksAxios from './axios.js';
 
 // POST Создание проекта
 const postXML = document.getElementById('create-xml-tasks');
-postXML.addEventListener('click', tasksXML.putTasksXHR);
+postXML.addEventListener('click', tasksXML.postTasksXHR);
 
 // GET Получение проекта по id
 const getXML = document.getElementById('get-xml-tasks');

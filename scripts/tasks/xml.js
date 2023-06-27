@@ -3,8 +3,8 @@ import { BASE_URL, token } from '../../index.js';
 const projectId = JSON.parse(localStorage.getItem('project_Id-xhr'));
 let taskId = null;
 
-// POST Создание проекта
-const postPrjectsXHR = () => {
+// POST Создание задачи
+const postTasksXHR = () => {
 	const xhr = new XMLHttpRequest();
 	const createPost = {
 		name: 'Egor F.',
@@ -81,4 +81,4 @@ const deleteTasksXHR = () => {
 	xhr.send();
 };
 
-export default { postPrjectsXHR, putTasksXHR, deleteTasksXHR, getTasksXHR };
+export default { postTasksXHR, putTasksXHR, deleteTasksXHR, getTasksXHR };
