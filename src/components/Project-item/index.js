@@ -1,4 +1,4 @@
-import dots from "../../assets/svg/dots.svg"
+import "@/assets/svg/dots.svg"
 const projectItem = () => {
 	return `
   <div class="project-item">

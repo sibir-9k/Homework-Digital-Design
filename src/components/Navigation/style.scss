@@ -65,17 +65,17 @@ $btn-color-hover: #ececef;
 			display: flex;
 			align-items: center;
 			margin-right: 72px;
-			padding: 9px 16px;
 			color: $main-color;
 			text-decoration: none;
 			background-color: inherit;
+      box-sizing: border-box;
 			border: none;
 			padding: 12px 16px;
 			border-radius: 4px;
 
 			&:hover {
 				cursor: pointer;
-				border: 1px solid $main-color;
+				outline: 1px solid $main-color;
 			}
 
 			&.active {
@@ -113,9 +113,6 @@ $btn-color-hover: #ececef;
 				list-style: none;
         cursor: pointer;
 
-        &:hover{
-          background: #DCDCDE;
-        }
 			}
 		}
 	}

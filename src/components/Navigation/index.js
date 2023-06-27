@@ -1,4 +1,4 @@
-import userArrowDown from '../../assets/svg/user-arrow-down.svg'
+import '@/assets/svg/user-arrow-down.svg'
 function Navigation(userAvatar) {
 	return `
   <nav class="navigation">
