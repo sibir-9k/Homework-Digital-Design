@@ -59,17 +59,17 @@
   display: flex;
   align-items: center;
   margin-right: 72px;
-  padding: 9px 16px;
   color: white;
   text-decoration: none;
   background-color: inherit;
+  box-sizing: border-box;
   border: none;
   padding: 12px 16px;
   border-radius: 4px;
 }
 .navigation .user-block .user-img:hover {
   cursor: pointer;
-  border: 1px solid white;
+  outline: 1px solid white;
 }
 .navigation .user-block .user-img.active {
   background: white;
@@ -102,9 +102,6 @@
   padding: 8px 16px;
   list-style: none;
   cursor: pointer;
-}
-.navigation .user-block .setting-drop-down__list .drop-down__item:hover {
-  background: #DCDCDE;
 }
 
 body {
@@ -272,9 +269,6 @@ html {
   list-style: none;
   cursor: pointer;
 }
-.project-item__setting .setting-drop-down__list .drop-down__item:hover {
-  background: #dcdcde;
-}
 .project-item__setting .setting-drop-down__list .delete {
   font-size: 14px;
   font-family: Open Sans;
@@ -400,9 +394,6 @@ html {
   padding: 8px 16px;
   list-style: none;
   cursor: pointer;
-}
-.task-item__setting .setting-drop-down__list .drop-down__item:hover {
-  background: #dcdcde;
 }
 .task-item__setting .setting-drop-down__list .delete {
   font-size: 14px;
