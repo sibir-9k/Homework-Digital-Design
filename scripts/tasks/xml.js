@@ -10,14 +10,14 @@ const postTasksXHR = () => {
 		name: 'Egor F.',
 		description: 'task-xhr-post',
 		projectId: `${projectId}`,
-		executor: 'id',
+		executor: '648af1fb7287972ce8676f0e',
 	};
 	xhr.open('POST', `${BASE_URL}/tasks`);
 	xhr.responseType = 'json';
 	xhr.setRequestHeader('Content-Type', 'application/json');
 	xhr.setRequestHeader('Authorization', `Bearer ${token}`);
 	xhr.onload = () => {
-		console.log('postPrjectsXHR - POST Создание проекта', xhr.response);
+		console.log('postTasksXHR - POST Создание проекта', xhr.response);
 		taskId = xhr.response._id;
 	};
 	xhr.onerror = () => {
@@ -50,14 +50,15 @@ const putTasksXHR = () => {
     "name": "Egor. F.",
     "description": "task-put-xhr",
     "projectId": `${projectId}`,
-    "executor": "id",
+    "executor": "648af1fb7287972ce8676f0e",
     "status": "IN_PROCESS" // см. рест /statuses
 	};
 	xhr.open('PUT', `${BASE_URL}/tasks`);
 	xhr.setRequestHeader('Content-Type', 'application/json');
 	xhr.setRequestHeader('Authorization', `Bearer ${token}`);
 	xhr.onload = () => {
-		console.log('putTasksXHR - PUT Изменение проекта', xhr.response);
+		console.log('putTasksXHR - PUT Изменение проекта');
+    console.log(xhr.response)
 	};
 	xhr.onerror = () => {
 		console.log(xhr.response);
@@ -68,7 +69,7 @@ const putTasksXHR = () => {
 // DELETE Удаление проекта по id
 const deleteTasksXHR = () => {
 	const xhr = new XMLHttpRequest();
-	xhr.open('DELETE', `${BASE_URL}/tasks/${projectId}`);
+	xhr.open('DELETE', `${BASE_URL}/tasks/${taskId}`);
 	xhr.setRequestHeader('Authorization', `Bearer ${token}`);
 	xhr.onload = function () {
 		var data = JSON.parse(xhr.responseText);

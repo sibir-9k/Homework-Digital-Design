@@ -12,7 +12,7 @@ const postTasksAxios = async () => {
 				name: 'Egor F.',
 				description: 'task-axios-post',
 				projectId: `${projectId}`,
-				executor: 'id',
+				executor: '648af1fb7287972ce8676f0e',
 			},
 			{
 				headers: {
@@ -56,7 +56,7 @@ const putTasksAxios = async () => {
         "name": "Egor F",
         "description": "task-put-axios",
         "projectId": `${projectId}`,
-        "executor": "id",
+        "executor": "648af1fb7287972ce8676f0e",
         "status": "IN_PROCESS" // см. рест /statuses
 			},
 			{

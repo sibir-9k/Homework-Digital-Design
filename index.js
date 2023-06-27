@@ -25,5 +25,3 @@ fetch(`${BASE_URL}/login`, {
 	})
 	.then((data) => saveToken(data.token))
 	.catch((error) => console.log('er', error));
-
-

@@ -15,7 +15,7 @@ const postTasksFetch = async () => {
 			name: 'Egor F.',
 			description: 'task-fetch-post',
 			projectId: `${projectId}`,
-			executor: 'id',
+			executor: '648af1fb7287972ce8676f0e',
 		}),
 	});
 
@@ -51,8 +51,8 @@ const putTasksFetch = async () => {
       "name": "Egor. F.",
       "description": "task-put-fetch",
       "projectId": `${projectId}`,
-      "executor": "id",
-      "status": "IN_PROCESS" // см. рест /statuses
+      "executor": "648af1fb7287972ce8676f0e",
+      "status": "IN_PROCESS" 
 		}),
 	});
 
