@@ -1,9 +1,9 @@
-import Navigation from '../src/components/Navigation/index.js';
-import PlugComponent from './components/Plug/index.js';
-import projectItem from './components/Project-item/index.js';
-import TaskItem from './components/Task-item/index.js';
-import dropDownBtn from './utils/drop-down.js';
-import toggleNavBtn from './utils/toggle-nav-btn.js';
+import Navigation from '@/components/Navigation/index.js';
+import PlugComponent from '@/components/Plug/index.js';
+import projectItem from '@/components/Project-item/index.js';
+import TaskItem from '@/components/Task-item/index.js';
+import dropDownBtn from '@/utils/drop-down.js';
+import toggleNavBtn from '@/utils/toggle-nav-btn.js';
 import userAvatar from '@/assets/img/user.png';
 import './style.scss';
 
