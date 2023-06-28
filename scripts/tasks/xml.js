@@ -2,6 +2,7 @@ import { BASE_URL, token } from '../../index.js';
 
 const projectId = JSON.parse(localStorage.getItem('project_Id-xhr'));
 let taskId = null;
+const executor = '648af1fb7287972ce8676f0e';
 
 // POST Создание задачи
 const postTasksXHR = () => {
@@ -9,8 +10,8 @@ const postTasksXHR = () => {
 	const createPost = {
 		name: 'Egor F.',
 		description: 'task-xhr-post',
-		projectId: `${projectId}`,
-		executor: '648af1fb7287972ce8676f0e',
+		projectId: `${localStorage.getItem('project_Id-xhr')}`,
+		executor: `${executor}`,
 	};
 	xhr.open('POST', `${BASE_URL}/tasks`);
 	xhr.responseType = 'json';
@@ -26,7 +27,7 @@ const postTasksXHR = () => {
 	xhr.send(JSON.stringify(createPost));
 };
 
-// GET Получение проекта по id
+// GET Получение задачи по id
 const getTasksXHR = async () => {
 	const xhr = new XMLHttpRequest();
 	xhr.open('GET', `${BASE_URL}/tasks/${taskId}`);
@@ -42,16 +43,16 @@ const getTasksXHR = async () => {
 	xhr.send();
 };
 
-// PUT Изменение проекта
+// PUT Изменение задачи
 const putTasksXHR = () => {
 	const xhr = new XMLHttpRequest();
 	const updPost = {
     "_id": `${taskId}`,
     "name": "Egor. F.",
     "description": "task-put-xhr",
-    "projectId": `${projectId}`,
-    "executor": "648af1fb7287972ce8676f0e",
-    "status": "IN_PROCESS" // см. рест /statuses
+    "projectId": `${localStorage.getItem('project_Id-xhr')}`,
+    "executor": `${executor}`,
+    "status": "IN_PROCESS" 
 	};
 	xhr.open('PUT', `${BASE_URL}/tasks`);
 	xhr.setRequestHeader('Content-Type', 'application/json');

@@ -1,7 +1,7 @@
 import { BASE_URL, token } from '../../index.js';
 
-const projectId = JSON.parse(localStorage.getItem('project_Id-axios'));
 let taskId = null
+const executor = '648af1fb7287972ce8676f0e';
 
 // POST Создание задачи
 const postTasksAxios = async () => {
@@ -11,8 +11,8 @@ const postTasksAxios = async () => {
 			{
 				name: 'Egor F.',
 				description: 'task-axios-post',
-				projectId: `${projectId}`,
-				executor: '648af1fb7287972ce8676f0e',
+				projectId: `${localStorage.getItem('project_Id-axios')}`,
+				executor: `${executor}`,
 			},
 			{
 				headers: {
@@ -55,8 +55,8 @@ const putTasksAxios = async () => {
         "_id": `${taskId}`,
         "name": "Egor F",
         "description": "task-put-axios",
-        "projectId": `${projectId}`,
-        "executor": "648af1fb7287972ce8676f0e",
+        "projectId": `${localStorage.getItem('project_Id-axios')}`,
+        "executor": `${executor}`,
         "status": "IN_PROCESS" // см. рест /statuses
 			},
 			{

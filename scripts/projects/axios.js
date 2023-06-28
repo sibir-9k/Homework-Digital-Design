@@ -21,7 +21,7 @@ const postPrjectsAxios = async () => {
 		const result = response.data;
 		const project_Id = result._id;
 		projectID = project_Id
-    localStorage.setItem('project_Id-axios', JSON.stringify(project_Id))
+    localStorage.setItem('project_Id-axios',(project_Id))
 		console.log('postPrjectsAxios - POST Создание проекта');
 		console.log(result);
 	} catch (error) {

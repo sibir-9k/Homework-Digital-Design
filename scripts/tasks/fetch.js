@@ -1,7 +1,7 @@
 import { BASE_URL, token } from '../../index.js';
 
-const projectId = JSON.parse(localStorage.getItem('project_Id-fetch'));
 let taskId = null;
+const executor = '648af1fb7287972ce8676f0e';
 
 // POST Создание задачи
 const postTasksFetch = async () => {
@@ -14,13 +14,13 @@ const postTasksFetch = async () => {
 		body: JSON.stringify({
 			name: 'Egor F.',
 			description: 'task-fetch-post',
-			projectId: `${projectId}`,
-			executor: '648af1fb7287972ce8676f0e',
+			projectId: `${localStorage.getItem('project_Id-fetch')}`,
+			executor: `${executor}`,
 		}),
 	});
 
 	let result = await response.json();
-	taskId = result._id
+	taskId = result._id;
 	console.log('postPrjectsFetch - POST Создание проекта');
 	console.log(result);
 };
@@ -47,12 +47,12 @@ const putTasksFetch = async () => {
 			Authorization: `Bearer ${token}`,
 		},
 		body: JSON.stringify({
-      "_id": `${taskId}`,
-      "name": "Egor. F.",
-      "description": "task-put-fetch",
-      "projectId": `${projectId}`,
-      "executor": "648af1fb7287972ce8676f0e",
-      "status": "IN_PROCESS" 
+			_id: `${taskId}`,
+			name: 'Egor. F.',
+			description: 'task-put-fetch',
+			projectId: `${localStorage.getItem('project_Id-fetch')}`,
+			executor: '648af1fb7287972ce8676f0e',
+			status: 'IN_PROCESS',
 		}),
 	});
 
