@@ -1,0 +1,27 @@
+.select-block {
+	display: flex;
+	margin-right: 24px;
+
+	button {
+		width: 42px;
+		height: 42px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		svg {
+			width: 24px;
+			height: 24px;
+		}
+	}
+}
+
+select {
+	display: flex;
+	width: 214px;
+	height: 42px;
+	padding: 10px 9px 10px 12px;
+	align-items: center;
+	gap: 8px;
+	align-self: stretch;
+}
