@@ -23,18 +23,22 @@
 				<div class="item-block__footer">
 					<div class="footer-author">
 						#{{ taskItem.id }}
-						<span class="footer-author__name">{{ taskItem.user }} создал {{taskItem.dataCreate}}</span>
+						<span class="footer-author__name"
+							>{{ taskItem.user }} создал {{ taskItem.dataCreate }}</span
+						>
 						<div class="status status--draft">{{ taskItem.status }}</div>
 					</div>
 					<div class="footer__block-right">
 						<div class="footer__editor">
-							<span class="footer-author__name">{{ taskItem.editor }} изменил {{taskItem.dateEdited}}</span>
+							<span class="footer-author__name"
+								>{{ taskItem.editor }} изменил {{ taskItem.dateEdited }}</span
+							>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-    <DropdownButton></DropdownButton>
+		<DropdownButton></DropdownButton>
 	</div>
 </template>
 
@@ -43,7 +47,7 @@ import '@/utils/drop-down.js';
 import './style.scss';
 import DropdownButton from '@/UI/DropdownButton/DropdownButton.vue';
 export default {
-  components: { DropdownButton },
+	components: { DropdownButton },
 	name: 'TaskItem',
 	props: {
 		taskItem: {
