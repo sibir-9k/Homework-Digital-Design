@@ -5,7 +5,11 @@
 		</div>
 		<div class="profile-info">
 			<div class="profile-info__top">
-				<h1 class="info-top__name">Котов Семен Васильевич</h1>
+				<div class="info-top">
+					<h1 class="info-top__name">Котов Семен Васильевич</h1>
+					<!-- <div class="info-top__status">Активен</div> -->
+          <Status classNameStatus="info-top__status" status="Активен"></Status>
+				</div>
 				<button class="setting-btn" data-path="task-item">
 					<svg>
 						<use xlink:href="#dots" />
@@ -46,8 +50,10 @@
 </template>
 
 <script>
-import './style.scss'
-export default {};
+import Status from '@/UI/Status/Status.vue';
+import './style.scss';
+export default {
+  components: { Status },};
 </script>
 
 <style></style>

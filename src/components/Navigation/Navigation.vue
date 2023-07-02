@@ -12,30 +12,33 @@
 					<button class="nav-btn">Пользователи</button>
 				</li>
 			</ul>
-			<div class="user-block">
-				<button class="user-img setting-btn" data-path="user">
-					<img src="@/assets/img/user.jpg" alt="" width="24" height="24" />
-					<svg>
-						<use xlink:href="#arrow-down" />
-					</svg>
-				</button>
-				<ul data-target="user" class="setting-drop-down__list">
-					<li class="drop-down__item">Профиль</li>
-					<li class="drop-down__item">Выход</li>
-				</ul>
-			</div>
+			<DropdownButton
+				:imgUser="true"
+				:dropList="dropList"
+				iconName="arrow-down"
+				classNameBlock="user-block"
+				classNameButton="user-img"></DropdownButton>
 		</nav>
 	</header>
 </template>
 
 <script>
-import '@/UI/Button/Button.vue'
-import '@/assets/svg/arrow-down.svg'
-import './style.scss'
+import '@/UI/Button/Button.vue';
+import '@/assets/svg/arrow-down.svg';
+import Icon from '@/UI/Icon/Icon.vue';
+import DropdownButton from '@/UI/DropdownButton/DropdownButton.vue';
+import './style.scss';
 
 export default {
-  name:'Navigation'
+	name: 'Navigation',
+	components: {
+		Icon,
+		DropdownButton,
+	},
+	data() {
+		return {
+			dropList: ['Профиль', 'Выход'],
+		};
+	},
 };
 </script>
-
-

@@ -5,19 +5,46 @@
 		padding: 12px 10px;
 	}
 	.profile-info {
-    padding-left: 24px;
+		padding-left: 24px;
 		&__top {
 			display: flex;
 			justify-content: space-between;
 			margin-bottom: 33px;
-			// .info-top__name {
-			// }
+
+			.info-top {
+				display: flex;
+				align-items: center;
+				gap: 24px;
+				&__name {
+					font-size: 24px;
+					font-family: Open Sans;
+					font-style: normal;
+					font-weight: 600;
+					line-height: normal;
+				}
+				&__status {
+					height: 19px;
+					padding: 0px 8px;
+					border-radius: 4px;
+					background: #1f75cb;
+
+					color: #fff;
+					font-size: 14px;
+					font-family: Open Sans;
+					font-style: normal;
+					font-weight: 400;
+					line-height: normal;
+				}
+			}
 			.setting-btn {
 				display: flex;
 				align-items: center;
 				justify-content: center;
 				width: 42px;
 				height: 42px;
+				border-radius: 4px;
+				border: 1px solid rgba(0, 0, 0, 0.15);
+				background: #fff;
 				svg {
 					width: 24px;
 					height: 24px;

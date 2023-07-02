@@ -1,13 +1,28 @@
 <template>
-  <use xlink:href="#dots" />
+	<svg>
+		<use :xlink:href="nameIcon" />
+	</svg>
 </template>
 
 <script>
 export default {
-
-}
+	name: 'Icon',
+	props: {
+		iconName: {
+			type: String,
+		},
+	},
+	computed: {
+		nameIcon() {
+			return `#${this.iconName}`;
+		},
+	},
+};
 </script>
 
 <style>
-
+/* svg {
+	width: 13px;
+	height: 3px;
+} */
 </style>

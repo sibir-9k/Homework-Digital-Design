@@ -2,7 +2,8 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import ProjectView from '@/views/ProjectView.vue';
 import TasksView from '@/views/TasksView.vue';
-import ProfileView from "@/views/ProfileView.vue"
+import ProfileView from '@/views/ProfileView.vue';
+import CreateTask from '@/views/CreateTaskView.vue';
 
 Vue.use(VueRouter);
 
@@ -21,6 +22,11 @@ const routes = [
 		path: '/profile',
 		name: 'profile',
 		component: ProfileView,
+	},
+	{
+		path: '/create-task',
+		name: 'create-task',
+		component: CreateTask,
 	},
 	// {
 	//   path: '/about',

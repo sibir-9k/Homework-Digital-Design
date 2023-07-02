@@ -8,10 +8,17 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		border-radius: 0px 4px 4px 0px;
+		border-top: 1px solid rgba(0, 0, 0, 0.15);
+		border-left: 1px solid rgba(0, 0, 0, 0.15);
+		border-right: 1px solid rgba(0, 0, 0, 0.15);
+		border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+		background: #fff;
 
+    
 		svg {
-			width: 24px;
-			height: 24px;
+			width: 16px;
+			height: 15.556px;
 		}
 	}
 }
@@ -24,4 +31,7 @@ select {
 	align-items: center;
 	gap: 8px;
 	align-self: stretch;
+	border-radius: 4px 0px 0px 4px;
+	border: 1px solid  rgba(0, 0, 0, 0.15);
+	background:  #fff;
 }

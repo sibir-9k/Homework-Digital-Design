@@ -50,7 +50,7 @@ $btn-color-hover: #ececef;
 				cursor: pointer;
 				color: $text-hover-color;
 				background: $btn-color-hover;
-				border: inherit;
+				// border: inherit;
 			}
 
 			.btn-active {
@@ -91,6 +91,7 @@ $btn-color-hover: #ececef;
 				border-radius: 50%;
 				margin-right: 8px;
 			}
+      
 			svg {
 				width: 12px;
 				height: 8px;

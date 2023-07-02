@@ -1,11 +1,16 @@
 <template>
 	<div class="home">
 		<Navigation></Navigation>
-		<filter-search></filter-search>
-		<Task-item
-			v-for="taskItem in items"
-			v-bind:taskItem="taskItem"
-			v-bind:key="taskItem.id"></Task-item>
+		<div class="content">
+			<filter-search></filter-search>
+			<Plug v-if="hasTasks" textMessage="Не создана ни одна задача"></Plug>
+			<template v-else>
+				<Task-item
+					v-for="taskItem in items"
+					v-bind:taskItem="taskItem"
+					v-bind:key="taskItem.id"></Task-item>
+			</template>
+		</div>
 	</div>
 </template>
 
@@ -13,16 +18,18 @@
 import Navigation from '@/components/Navigation/Navigation.vue';
 import TaskItem from '@/components/Task-item/TaskItem.vue';
 import FilterSearch from '@/components/FilterSearch/FilterSearch.vue';
-
+import Plug from '@/components/Plug/Plug.vue';
 export default {
 	name: 'TaskView',
 	components: {
 		Navigation,
 		TaskItem,
 		FilterSearch,
+		Plug,
 	},
 	data() {
 		return {
+			hasTask: false,
 			items: [
 				{
 					id: 1,
@@ -66,6 +73,15 @@ export default {
 				},
 			],
 		};
+	},
+	computed: {
+		hasTasks() {
+			if (this.items.length < 1) {
+				return (this.hasTask = true);
+			} else {
+				return (this.hasTask = false);
+			}
+		},
 	},
 };
 </script>

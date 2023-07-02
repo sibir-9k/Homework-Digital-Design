@@ -1,0 +1,140 @@
+.create-task {
+	display: flex;
+	padding: 24px;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 24px;
+	margin: 24px;
+	align-self: stretch;
+
+	border-radius: 4px;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+
+	&__title {
+		color: #000;
+		text-align: center;
+		font-size: 40px;
+		font-family: Open Sans;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+	}
+	hr {
+		width: 100%;
+		height: 1px;
+		background: rgba(0, 0, 0, 0.15);
+	}
+	/* .create-task__form */
+	&__form {
+		display: flex;
+		width: 720px;
+		padding: 32px 24px 24px 24px;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 24px;
+		flex: 1 0 0;
+		margin-bottom: 140px;
+	}
+
+	/* .create-task__form-group */
+
+	&__form-group {
+		display: flex;
+		align-items: flex-start;
+		gap: 8px;
+		align-self: stretch;
+		justify-content: space-between;
+	}
+
+	/* .create-task__label */
+
+	&__label {
+		display: flex;
+		color: #8e8e8e;
+		text-align: center;
+		font-size: 14px;
+		font-family: Open Sans;
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+		margin-right: 50px;
+
+		.required {
+			margin-left: 4px;
+			color: #ee4222;
+		}
+	}
+
+	/* .create-task__input */
+
+	&__input,
+	&__textarea,
+	&__select {
+		display: flex;
+		width: 523px;
+		padding: 10px 12px;
+		align-items: center;
+
+		border-radius: 4px;
+		border: 1px solid rgba(0, 0, 0, 0.15);
+		background: #fff;
+	}
+
+	/* .create-task__textarea */
+
+	&__textarea {
+		height: 120px;
+	}
+
+	/* .create-task__select */
+
+	// &__select {
+	// }
+}
+
+.btn-block {
+	display: flex;
+	gap: 24px;
+	width: 100%;
+	justify-content: flex-end;
+	.btn-cancel,
+	.btn-create {
+		padding: 12px 16px;
+		align-items: center;
+		border-radius: 4px;
+		cursor: pointer;
+
+		text-align: center;
+		font-size: 14px;
+		font-family: Open Sans;
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+	}
+
+	.btn-cancel {
+		border: 1px solid rgba(0, 0, 0, 0.15);
+		background: #fff;
+		color: #1c1c1c;
+		&:hover {
+			border: 1px solid rgba(18, 19, 22, 0.5);
+			background: #ececef;
+		}
+		&:active {
+			border: 1px solid #1c1c1c;
+			background: #dcdcde;
+		}
+	}
+	.btn-create {
+		background: #1f75cb;
+		color: #fff;
+		border: inherit;
+
+		&:hover {
+			background: #1068bf;
+		}
+		&:active {
+			background: #0b5cad;
+		}
+	}
+}

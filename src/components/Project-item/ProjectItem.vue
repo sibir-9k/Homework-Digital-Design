@@ -22,7 +22,10 @@
 				</div>
 			</div>
 		</div>
-    <DropdownButton></DropdownButton>
+		<DropdownButton
+			:dropList="dropList"
+			iconName="dots"
+			classNameBlock="project-item__setting"></DropdownButton>
 	</div>
 </template>
 
@@ -33,13 +36,18 @@ import './style.scss';
 import DropdownButton from '@/UI/DropdownButton/DropdownButton.vue';
 export default {
 	name: 'ProjectItem',
-  components:{
-    DropdownButton
-  },
+	components: {
+		DropdownButton,
+	},
 	props: {
 		project: {
 			type: Object,
 		},
+	},
+	data() {
+		return {
+			dropList: ['Редактировать', 'Удалить'],
+		};
 	},
 };
 </script>

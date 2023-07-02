@@ -1,25 +1,28 @@
 <template>
 	<div id="app">
-		<!-- <router-view/> -->
-		<!-- <ProfileView></ProfileView> -->
-		<project-view></project-view>
-		<!-- <tasks-view></tasks-view> -->
+		<router-view />
 	</div>
 </template>
 
 <script>
-import ProjectView from './views/ProjectView.vue';
-import ProfileView from './views/ProfileView.vue';
-import TasksView from './views/TasksView.vue';
-
 export default {
 	name: 'App',
-	components: {
-		ProfileView,
-		ProjectView,
-		TasksView,
-	},
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+#app {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+.home,
+.content {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+a {
+	text-decoration: none;
+}
+</style>

@@ -1,9 +1,14 @@
 <template>
 	<div class="home">
 		<Navigation></Navigation>
-		<filter-search></filter-search>
-		<Project-item v-for="project in projects" v-bind:project="project" v-bind:key="project.id">
-		</Project-item>
+		<div class="content">
+			<filter-search></filter-search>
+			<Plug v-if="hasProjects" textMessage="Не создан ни один проект"></Plug>
+			<template v-else>
+				<Project-item v-for="project in projects" v-bind:project="project" v-bind:key="project.id">
+				</Project-item>
+			</template>
+		</div>
 	</div>
 </template>
 
@@ -11,6 +16,7 @@
 import Navigation from '@/components/Navigation/Navigation.vue';
 import ProjectItem from '@/components/Project-item/ProjectItem.vue';
 import FilterSearch from '@/components/FilterSearch/FilterSearch.vue';
+import Plug from '@/components/Plug/Plug.vue';
 
 export default {
 	name: 'ProjectView',
@@ -18,9 +24,11 @@ export default {
 		Navigation,
 		ProjectItem,
 		FilterSearch,
+		Plug,
 	},
 	data() {
 		return {
+			hasProject: false,
 			projects: [
 				{
 					id: 1,
@@ -64,6 +72,15 @@ export default {
 				},
 			],
 		};
+	},
+	computed: {
+		hasProjects() {
+			if (this.projects.length < 1) {
+				return (this.hasProject = true);
+			} else {
+				return (this.hasProject = false);
+			}
+		},
 	},
 };
 </script>

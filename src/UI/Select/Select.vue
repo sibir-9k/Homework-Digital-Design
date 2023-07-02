@@ -1,23 +1,20 @@
 <template>
-	<div class="select-block">
-		<select>
+	<div>
+		<select :class="className">
 			<option disabled value="">Please select one</option>
-			<option>A</option>
-			<option>B</option>
-			<option>C</option>
+			<option>{{ option1 }}</option>
+			<option>{{ option2 }}</option>
+			<option>{{ option3 }}</option>
+			<option>{{ option4 }}</option>
 		</select>
-		<button>
-      <svg>
-        <use xlink:href="#filter-arrow-up" />
-      </svg>
-    </button>
 	</div>
 </template>
 
 <script>
-import '@/assets/svg/filter-arrow-up.svg'
+import '@/assets/svg/filter-arrow-up.svg';
 import './style.scss';
 export default {
 	name: 'Select',
+	props: ['option1', 'option2', 'option3', 'option4', 'className'],
 };
 </script>

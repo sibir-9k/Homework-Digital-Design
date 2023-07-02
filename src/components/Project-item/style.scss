@@ -97,13 +97,17 @@ $error: #ee4222;
 
 	&__setting {
 		display: none;
-    position: relative;
+		position: relative;
 		.setting-btn {
 			width: 42px;
 			height: 42px;
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			border-radius: 4px;
+			border: 1px solid rgba(0, 0, 0, 0.15);
+			background: #fff;
+
 			svg {
 				width: 24px;
 				height: 24px;
@@ -113,7 +117,7 @@ $error: #ee4222;
 			display: none;
 			width: fit-content;
 			padding: 8px 0px;
-			// background: $main-color;
+			background: white;
 
 			&.open {
 				display: block;
@@ -127,7 +131,6 @@ $error: #ee4222;
 				padding: 8px 16px;
 				list-style: none;
 				cursor: pointer;
-
 			}
 			.delete {
 				font-size: 14px;
