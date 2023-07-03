@@ -4,6 +4,7 @@ import ProjectView from '@/views/ProjectView.vue';
 import TasksView from '@/views/TasksView.vue';
 import ProfileView from '@/views/ProfileView.vue';
 import CreateTask from '@/views/CreateTaskView.vue';
+import UsersView from '@/views/UsersView.vue'
 
 Vue.use(VueRouter);
 
@@ -27,6 +28,11 @@ const routes = [
 		path: '/create-task',
 		name: 'create-task',
 		component: CreateTask,
+	},
+	{
+		path: '/users',
+		name: 'users',
+		component: UsersView,
 	},
 	// {
 	//   path: '/about',

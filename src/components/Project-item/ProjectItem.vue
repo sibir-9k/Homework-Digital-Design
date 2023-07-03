@@ -30,10 +30,9 @@
 </template>
 
 <script>
-import '@/utils/drop-down.js';
 import '@/assets/svg/dots.svg';
-import './style.scss';
 import DropdownButton from '@/UI/DropdownButton/DropdownButton.vue';
+import './style.scss';
 export default {
 	name: 'ProjectItem',
 	components: {
