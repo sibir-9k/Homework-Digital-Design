@@ -1,11 +1,14 @@
 <template>
 	<div>
-		<select :class="className">
+		<select :class="className" @input="$emit('input', $event.target.value)">
 			<option disabled value="">Please select one</option>
-			<option>{{ option1 }}</option>
-			<option>{{ option2 }}</option>
-			<option>{{ option3 }}</option>
-			<option>{{ option4 }}</option>
+			<option 
+        v-for="option in options" 
+        :key="option.value"
+        :value="option.value"
+      >
+        {{ option.optionText }}
+      </option>
 		</select>
 	</div>
 </template>
@@ -15,6 +18,14 @@ import '@/assets/svg/filter-arrow-up.svg';
 import './style.scss';
 export default {
 	name: 'Select',
-	props: ['option1', 'option2', 'option3', 'option4', 'className'],
+	props: {
+		options: {
+			type: Array,
+		},
+		className: {
+			type: String,
+		},
+	},
+ 
 };
 </script>

@@ -8,11 +8,19 @@
 					>Название
 					<div class="required">*</div></label
 				>
-				<input class="create-task__input" type="text" id="name" placeholder="Введите текст..." />
+				<input
+					v-model.trim="model.name"
+					class="create-task__input"
+					type="text"
+					id="name"
+					placeholder="Введите текст..." />
 			</div>
 			<div class="create-task__form-group">
 				<label class="create-task__label">Описание</label>
-				<textarea class="create-task__textarea" placeholder="Введите текст..." />
+				<textarea
+					v-model.trim="model.description"
+					class="create-task__textarea"
+					placeholder="Введите текст..." />
 			</div>
 			<div class="create-task__form-group">
 				<label class="create-task__label"
@@ -20,26 +28,26 @@
 					<div class="required">*</div></label
 				>
 				<Select
+					v-model="model.project"
 					className="create-task__select"
-					option1="Проект 1"
-					option2="Проект 2"
-					option3="Проект 3"
-					option4="Проект 4"></Select>
+					:options="projectsArray"></Select>
 			</div>
 			<div class="create-task__form-group">
 				<label class="create-task__label">Исполнитель</label>
 				<Select
+					v-model="model.executor"
 					className="create-task__select"
-					option1="Иванов И.И."
-					option2="Петров П.П."
-					option3="Фёдоров В.А."
-					option4="Алексеев Ю.Н."></Select>
+					:options="executorsArray"></Select>
 			</div>
 		</form>
 		<hr />
 		<div class="btn-block">
 			<Button btnClassName="btn-cancel" btnName="Отмена"></Button>
-			<Button btnClassName="btn-create" btnName="Создать задачу"></Button>
+			<Button 
+        btnClassName="btn-create"   
+        btnName="Создать задачу"  
+        v-on:click="createTask"
+        ></Button>
 		</div>
 	</div>
 </template>
@@ -51,6 +59,39 @@ import './style.scss';
 export default {
 	name: 'CreateTask',
 	components: { Select, Button },
+	data() {
+		return {
+			model: {
+				name: '',
+				description: '',
+				project: '',
+				executor: '',
+			},
+			projectsArray: [
+				{ value: 'Проект 1', optionText: 'Проект 1' },
+				{ value: 'Проект 2', optionText: 'Проект 2' },
+				{ value: 'Проект 3', optionText: 'Проект 3' },
+				{ value: 'Проект 4', optionText: 'Проект 4' },
+			],
+			executorsArray: [
+				{ value: 'Иванов И.И.', optionText: 'Иванов И.И.' },
+				{ value: 'Петров П.П.', optionText: 'Петров П.П.' },
+				{ value: 'Фёдоров В.А.', optionText: 'Фёдоров В.А.' },
+				{ value: 'Алексеев Ю.Н.', optionText: 'Алексеев Ю.Н.' },
+			],
+		};
+	},
+	methods: {
+		createTask() {
+			console.log(this.model);
+			this.model = {
+				name: '',
+				description: '',
+				project: '',
+				executor: '',
+			};
+		},
+	},
 };
 </script>
 

@@ -1,5 +1,8 @@
 <template>
-	<button :class="btnClassName">
+	<button 
+    :class="btnClassName"   
+    v-on:click.prevent="$emit('click', $event)"
+  >
 		{{ btnName }}
 	</button>
 </template>
