@@ -5,6 +5,8 @@ import TasksView from '@/views/TasksView.vue';
 import ProfileView from '@/views/ProfileView.vue';
 import CreateTask from '@/views/CreateTaskView.vue';
 import UsersView from '@/views/UsersView.vue'
+import NotFound from '@/views/NotFoundView.vue'
+import AuthorisationView from '@/views/AuthorisationView.vue'
 
 Vue.use(VueRouter);
 
@@ -14,6 +16,11 @@ const routes = [
 		name: 'home',
 		component: ProjectView,
 	},
+  {
+    path:'/auth',
+    name: 'auth',
+    component: AuthorisationView
+  },
 	{
 		path: '/tasks',
 		name: 'tasks',
@@ -34,14 +41,12 @@ const routes = [
 		name: 'users',
 		component: UsersView,
 	},
-	// {
-	//   path: '/about',
-	//   name: 'about',
-	//   // route level code-splitting
-	//   // this generates a separate chunk (about.[hash].js) for this route
-	//   // which is lazy-loaded when the route is visited.
-	//   component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-	// }
+	{
+		path: '*',
+		name: 'not-found',
+		component: NotFound,
+	},
+
 ];
 
 const router = new VueRouter({

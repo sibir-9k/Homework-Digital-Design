@@ -11,6 +11,10 @@ export default {
 </script>
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+body {
+	font-family: 'Open Sans', sans-serif;
+}
 #app {
 	display: flex;
 	flex-direction: column;
