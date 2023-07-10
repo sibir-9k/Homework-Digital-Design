@@ -7,6 +7,7 @@ import CreateTask from '@/views/CreateTaskView.vue';
 import UsersView from '@/views/UsersView.vue'
 import NotFound from '@/views/NotFoundView.vue'
 import AuthorisationView from '@/views/AuthorisationView.vue'
+import EditTask from '@/views/EditTaskView.vue'
 
 Vue.use(VueRouter);
 
@@ -35,6 +36,11 @@ const routes = [
 		path: '/create-task',
 		name: 'create-task',
 		component: CreateTask,
+	},
+	{
+		path: '/edit-task',
+		name: 'edit-task',
+		component: EditTask,
 	},
 	{
 		path: '/users',

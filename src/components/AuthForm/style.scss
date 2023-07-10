@@ -1,7 +1,7 @@
 .auth-block {
 	display: flex;
 	width: 300px;
-	height: 600px;
+	height: 400px;
 	flex-direction: column;
 	align-items: center;
 	flex-shrink: 0;
@@ -9,6 +9,15 @@
 	border-radius: 4px;
 	background: #fff;
 	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+	.error {
+		color: #ee4222;
+		font-size: 14px;
+		font-family: Open Sans;
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+	}
 
 	&__top {
 		display: flex;
@@ -101,18 +110,18 @@
 					background: var(--secondary-default, #fff);
 				}
 				button {
-          position: absolute;
-          display: flex;
-          right: 13px;
-          top: 53%;
+					position: absolute;
+					display: flex;
+					right: 13px;
+					top: 53%;
 					background-color: transparent;
 					border: none;
-          cursor: pointer;
+					cursor: pointer;
 				}
 				svg {
 					width: 24px;
 					height: 24px;
-          color: #8E8E8E;
+					color: #8e8e8e;
 				}
 			}
 		}
@@ -126,7 +135,8 @@
 		gap: 8px;
 		align-self: stretch;
 
-		button {
+		button,
+		.active-btn-auth {
 			display: flex;
 			height: 42px;
 			padding: 12px 16px;
@@ -145,71 +155,10 @@
 			font-weight: 400;
 			line-height: normal;
 		}
+
+		.active-btn-auth {
+			color: #fff;
+			background: #1f75cb;
+		}
 	}
 }
-
-
-.checkbox{
-  margin-bottom: 10px;
-}
-
-a{
-  border: 1px solid blue;
-  padding: 12px 16px;
-}
-
-
-// ///////////////////////////////////////
-
-/* Стили для переключателя */
-// .toggle-button {
-//   display: inline-block;
-//   position: relative;
-//   width: 50px;
-//   height: 24px;
-// }
-
-// .toggle-button__input {
-//   display: none;
-// }
-
-// .toggle-button__label {
-//   display: block;
-//   position: relative;
-//   width: 100%;
-//   height: 100%;
-//   cursor: pointer;
-// }
-
-// .toggle-button__inner {
-//   position: absolute;
-//   top: 2px;
-//   left: 2px;
-//   width: 20px;
-//   height: 20px;
-//   background-color: white;
-//   transition: transform 0.2s ease-in-out;
-//   border-radius: 100%;
-// }
-
-// .toggle-button__switch {
-//   position: absolute;
-//   top: 2px;
-//   right: 2px;
-//   bottom: 2px;
-//   left: 26px;
-//   background-color: #ccc;
-//   border-radius: 2px;
-//   transition: background-color 0.2s ease-in-out;
-// }
-
-// .toggle-button__input:checked + .toggle-button__label .toggle-button__inner {
-//   transform: translateX(26px);
-// }
-  
-// .toggle-button__input:checked + .toggle-button__label .toggle-button__switch {
-//     background-color: #007aff;
-// }
-
-
-// ///////////////////////////////////////

@@ -8,9 +8,7 @@
 					</router-link>
 				</li>
 				<li class="navigation__item">
-					<router-link to="tasks" class="nav-btn" active-class="btn-active">
-             Задачи
-          </router-link>
+					<router-link to="tasks" class="nav-btn" active-class="btn-active"> Задачи </router-link>
 				</li>
 				<li class="navigation__item">
 					<router-link to="users" class="nav-btn" active-class="btn-active">
@@ -43,7 +41,10 @@ export default {
 	},
 	data() {
 		return {
-			dropList: ['Профиль', 'Выход'],
+			dropList: [
+				{ type: 'router-link', props: { to: '/profile' }, text: 'Профиль' },
+				{ type: 'router-link', props: { to: '/auth' }, text: 'Выход' },
+			],
 			activeBtns: [],
 		};
 	},
@@ -52,12 +53,10 @@ export default {
 			return this.activeBtns.includes(path) ? 'btn-active' : '';
 		},
 		handleClick() {
-			console.log('что то');
 			if (!this.activeBtns.includes(this.$route.path)) {
 				this.activeBtns.push(this.$route.path);
 
 				const buttons = document.querySelectorAll('.nav-btn');
-				console.log(buttons);
 				buttons.forEach((button) => {
 					if (
 						button.classList.contains('btn-active') &&

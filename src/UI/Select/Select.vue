@@ -1,14 +1,13 @@
 <template>
 	<div>
 		<select :class="className" @input="$emit('input', $event.target.value)">
-			<option disabled value="">Please select one</option>
-			<option 
-        v-for="option in options" 
-        :key="option.value"
-        :value="option.value"
-      >
-        {{ option.optionText }}
-      </option>
+			<option
+				:class="classNameOption"
+				v-for="option in options"
+				:key="option.value"
+				:value="option.value">
+				{{ option.optionText }}
+			</option>
 		</select>
 	</div>
 </template>
@@ -25,7 +24,9 @@ export default {
 		className: {
 			type: String,
 		},
+    classNameOption: {
+      type: String,
+    }
 	},
- 
 };
 </script>

@@ -26,6 +26,7 @@ $error: #ee4222;
 	&__container {
 		display: flex;
 		flex-direction: column;
+		width: 100%;
 		.task-item__title {
 			font-family: 'Open Sans';
 			font-style: normal;
@@ -39,12 +40,13 @@ $error: #ee4222;
 			flex-direction: column;
 			padding: 14px 16px 8px;
 
-			&:hover .task-item__block-right .task-item__options {
+			&:hover .project-item__setting {
 				display: block;
 			}
 
 			.item-block__header {
 				display: flex;
+				justify-content: space-between;
 				.header-message {
 					display: -webkit-box;
 					-webkit-line-clamp: 2;
@@ -113,9 +115,13 @@ $error: #ee4222;
 			align-items: center;
 			justify-content: center;
 			border-radius: 4px;
-			border: 1px solid  rgba(0, 0, 0, 0.15);
-			background:  #fff;
+			border: 1px solid rgba(0, 0, 0, 0.15);
+			background: #fff;
 
+			svg {
+				width: 24px;
+				height: 24px;
+			}
 		}
 		.setting-drop-down__list {
 			display: none;

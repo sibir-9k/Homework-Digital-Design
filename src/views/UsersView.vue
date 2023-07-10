@@ -1,8 +1,8 @@
 <template>
 	<div class="home">
 		<Navigation></Navigation>
-		<template v-if="localStorage.getItem('Auth') === 'true'">
-			<Plug textMessage="Данные пользователя"></Plug>
+		<template v-if="localStorage.getItem('UserToken')">
+			<Plug textMessage="Пользователей пока нету"></Plug>
 		</template>
 		<template v-else>
 			<p>Вы не авторизованы</p>

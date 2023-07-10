@@ -1,25 +1,19 @@
 <template>
 	<div class="home">
 		<Navigation></Navigation>
-		<Profile :userData="userData"></Profile>
+		<EditTask></EditTask>
 	</div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
-import Profile from '@/components/Profile/Profile.vue';
 import Navigation from '@/components/Navigation/Navigation.vue';
+import EditTask from '@/components/EditTask/EditTask.vue';
 
 export default {
 	name: 'ProfileView',
 	components: {
-		Profile,
 		Navigation,
-	},
-	computed: {
-		...mapGetters({
-			userData: 'AuthUserModule/getUserData',
-		}),
+		EditTask,
 	},
 };
 </script>

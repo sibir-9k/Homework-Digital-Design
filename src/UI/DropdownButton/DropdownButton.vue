@@ -9,24 +9,40 @@
 			<img v-if="imgUser" src="@/assets/img/user.jpg" alt="" width="24" height="24" />
 			<Icon :iconName="iconName"></Icon>
 		</button>
-		<ul v-if="isOpen" :class="classList" data-target="project-item" class="setting-drop-down__list">
+		<!-- <ul v-if="isOpen" :class="classList" data-target="project-item" class="setting-drop-down__list">
 			<li class="drop-down__item">
 				<router-link :to="toLink()">
 					{{ dropList[0] }}
 				</router-link>
 			</li>
 			<li class="drop-down__item delete">{{ dropList[1] }}</li>
-		</ul>
+		</ul> -->
+		<!-- <DropList
+			:items="[
+				{
+					type: 'button',
+					props: {
+						onClick: () => {
+							console.log('Button clicked');
+						},
+					},
+					text: 'Click me',
+				},
+				{ type: 'link', props: { href: '/path/to/somewhere' }, text: 'Link' },
+			]" /> -->
+		<DropList :items="dropList" :class="classList" class="setting-drop-down__list"> </DropList>
 	</div>
 </template>
 
 <script>
 import Icon from '../Icon/Icon.vue';
 import vClickOutside from 'v-click-outside';
+import DropList from '../Dropdown/DropList/DropList.vue';
 export default {
 	name: 'DropdownButton',
 	components: {
 		Icon,
+		DropList,
 	},
 	props: {
 		imageName: {

@@ -1,17 +1,15 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from 'vue';
+import Vuex from 'vuex';
+import ProjectModule from './ProjectModule.js';
+import TaskModule from './TaskModule.js';
+import AuthUserModule from './AuthUserModule.js';
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {
-  },
-  getters: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
-  }
-})
+	modules: {
+		ProjectModule,
+		TaskModule,
+		AuthUserModule,
+	},
+});

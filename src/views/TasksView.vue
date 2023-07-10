@@ -2,23 +2,32 @@
 	<div class="home">
 		<Navigation></Navigation>
 		<div class="content">
-			<filter-search></filter-search>
-			<Plug v-if="hasTasks" textMessage="Не создана ни одна задача"></Plug>
+			<FilterSearch></FilterSearch>
+			<Plug v-if="!checkTasks" textMessage="Не создана ни одна задача"></Plug>
 			<template v-else>
-				<Task-item
-					v-for="taskItem in items"
+				<TaskItem
+					v-for="taskItem in allTasks"
 					v-bind:taskItem="taskItem"
-					v-bind:key="taskItem.id"></Task-item>
+					v-bind:key="taskItem.id"></TaskItem>
+				<Pagintations
+					:totalPages="totalPages"
+					:currentPage="currentPage"
+					@current-page-next="currentPageNext"
+					@prev-page="prevPage"
+					@next-page="nextPage"></Pagintations>
 			</template>
 		</div>
 	</div>
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex';
 import Navigation from '@/components/Navigation/Navigation.vue';
 import TaskItem from '@/components/Task-item/TaskItem.vue';
 import FilterSearch from '@/components/FilterSearch/FilterSearch.vue';
 import Plug from '@/components/Plug/Plug.vue';
+import Pagintations from '@/components/Paginations/Pagintations.vue';
+
 export default {
 	name: 'TaskView',
 	components: {
@@ -26,62 +35,45 @@ export default {
 		TaskItem,
 		FilterSearch,
 		Plug,
-	},
-	data() {
-		return {
-			hasTask: false,
-			items: [
-				{
-					id: 1,
-					user: 'Иванов И.И.',
-					editor: 'Баранов В.В.',
-					status: 'Черновик',
-					dataCreate: '1 минуту назад',
-					dateEdited: '1 час назад',
-				},
-				{
-					id: 2,
-					user: 'Иванов И.И.',
-					editor: 'Баранов В.В.',
-					status: 'Готово',
-					dataCreate: '2 минуту назад',
-					dateEdited: '3 час назад',
-				},
-				{
-					id: 3,
-					user: 'Иванов И.И.',
-					editor: 'Баранов В.В.',
-					status: 'Черновик',
-					dataCreate: '4 минуту назад',
-					dateEdited: '5 час назад',
-				},
-				{
-					id: 4,
-					user: 'Фролов Е.',
-					editor: 'Фролов Е.',
-					status: 'Черновик',
-					dataCreate: '6 минуту назад',
-					dateEdited: '7 час назад',
-				},
-				{
-					id: 5,
-					user: 'Иванов И.И.',
-					editor: 'Баранов В.В.',
-					status: 'Черновик',
-					dataCreate: '8 минуту назад',
-					dateEdited: '9 час назад',
-				},
-			],
-		};
+		Pagintations,
 	},
 	computed: {
-		hasTasks() {
-			if (this.items.length < 1) {
-				return (this.hasTask = true);
+		...mapGetters({
+			allTasks: 'TaskModule/getAllTasks',
+			totalPages: 'TaskModule/getTotalPages',
+			currentPage: 'TaskModule/getCurrentPage',
+		}),
+	},
+	methods: {
+		...mapActions({
+			getTasks: 'TaskModule/getTasks',
+			setCurrentPage: 'TaskModule/setCurrentPage',
+		}),
+		nextPage() {
+			const page = this.currentPage + 1;
+			// if (this.currentPage === this.totalPages) return;
+			// this.currentPage = this.currentPage + 1;
+		},
+		prevPage() {
+			if (this.currentPage === 1) return;
+			this.currentPage = this.currentPage - 1;
+		},
+		currentPageNext(page) {
+			this.setCurrentPage(page);
+			this.getTasks({
+				page: page,
+			});
+		},
+		checkTasks() {
+			if (this.allTasks.length > 0) {
+				return true;
 			} else {
-				return (this.hasTask = false);
+				return false;
 			}
 		},
+	},
+	mounted() {
+		this.getTasks();
 	},
 };
 </script>

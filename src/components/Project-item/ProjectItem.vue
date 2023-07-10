@@ -3,52 +3,78 @@
 		<div class="project-item__container">
 			<div class="project-item__block">
 				<div class="item-block__header">
-					<p class="header-message">Название</p>
+					<p class="header-message">{{ project.name }}</p>
 				</div>
 				<div class="item-block__footer">
 					<div class="footer-author">
-						#{{ project.id }}
+						#{{ project.code }}
 						<span class="footer-author__name"
-							>{{ project.user }} создал {{ project.dataCreate }}</span
+							>{{ nameCreated }} создал {{ formattedDateCreated }}</span
 						>
 					</div>
 					<div class="footer__block-right">
 						<div class="footer__editor">
 							<span class="footer-author__name"
-								>{{ project.editor }} изменил {{ project.dateEdited }}</span
+								>{{ project.editor }} изменил {{ formattedDateEdited }}</span
 							>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<DropdownButton
-			:dropList="dropList"
-			iconName="dots"
-			classNameBlock="project-item__setting"></DropdownButton>
+		<DropdownButton :dropList="dropList" iconName="dots" classNameBlock="project-item__setting">
+		</DropdownButton>
+		<FormProject v-if="modalOpen" @closeModal="modalOpen = false"></FormProject>
 	</div>
 </template>
 
 <script>
-import '@/assets/svg/dots.svg';
+import { formatDate } from '@/helpers/formatDate.js';
 import DropdownButton from '@/UI/DropdownButton/DropdownButton.vue';
+import FormProject from '@/UI/Forms/FormProject/FormProject.vue';
 import './style.scss';
+
 export default {
 	name: 'ProjectItem',
 	components: {
 		DropdownButton,
+		FormProject,
 	},
 	props: {
 		project: {
 			type: Object,
+			required: true,
 		},
 	},
 	data() {
 		return {
-			dropList: ['Редактировать', 'Удалить'],
+			dropList: [
+				{
+					type: 'button',
+					props: { onClick: this.openModal },
+					text: 'Редактировать',
+				},
+				{ type: 'button', props: { onClick: this.openModal }, class: 'delete', text: 'Удалить' },
+			],
+			modalOpen: false,
+			formattedDateCreated: '',
+			formattedDateEdited: '',
+			nameEdit: '',
+			nameCreated: '',
 		};
+	},
+	methods: {
+		openModal() {
+			this.modalOpen = true;
+		},
+	},
+	mounted() {
+		const dateCreated = new Date(this.project.dateCreated);
+		const dateEdited = this.project.dateEdited ? new Date(this.project.dateEdited) : null;
+		const { formattedDate, formattedDateEdited } = formatDate(dateCreated, dateEdited, this.months);
+
+		this.formattedDateCreated = formattedDate;
+		this.formattedDateEdited = formattedDateEdited;
 	},
 };
 </script>
-
-<style></style>
