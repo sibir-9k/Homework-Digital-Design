@@ -24,7 +24,7 @@
 		</div>
 		<DropdownButton :dropList="dropList" iconName="dots" classNameBlock="project-item__setting">
 		</DropdownButton>
-		<FormProject v-if="modalOpen" @closeModal="modalOpen = false"></FormProject>
+		<FormProject :modalOpen="modalOpen"></FormProject>
 	</div>
 </template>
 
@@ -51,10 +51,24 @@ export default {
 			dropList: [
 				{
 					type: 'button',
-					props: { onClick: this.openModal },
+					props: {
+						onClick: (event) => {
+							event.preventDefault();
+							this.modalOpen = true;
+						},
+					},
 					text: 'Редактировать',
 				},
-				{ type: 'button', props: { onClick: this.openModal }, class: 'delete', text: 'Удалить' },
+				{
+					type: 'button',
+					props: {
+						onClick: (event) => {
+							event.preventDefault();
+						},
+					},
+					class: 'delete',
+					text: 'Удалить',
+				},
 			],
 			modalOpen: false,
 			formattedDateCreated: '',

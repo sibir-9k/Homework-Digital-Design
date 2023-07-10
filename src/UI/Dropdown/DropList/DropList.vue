@@ -8,7 +8,7 @@
 				:class="item?.class"
 				>{{ item.text }}</component
 			>
-			<component v-else :is="item.type" :props="item.props" class="drop-btn" :class="item?.class">{{
+			<component v-else :is="item.type" @click="item.props.onClick" class="drop-btn" :class="item?.class">{{
 				item.text
 			}}</component>
 		</li>

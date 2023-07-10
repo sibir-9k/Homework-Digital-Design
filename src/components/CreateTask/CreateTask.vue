@@ -21,8 +21,9 @@
 
 <script>
 import Button from '@/UI/Button/Button.vue';
-import './style.scss';
 import FormTask from '@/UI/FormTask/FormTask.vue';
+import './style.scss';
+
 export default {
 	name: 'CreateTask',
 	components: { Button, FormTask },

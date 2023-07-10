@@ -6,6 +6,7 @@ export const mutation = {
 	SET_PROJECTS_LIST: 'SET_PROJECTS_LIST',
 	SET_PROJECTS_CURRENT_PAGE: 'SET_PROJECTS_CURRENT_PAGE',
 	SET_PROJECTS_TOTAL_PAGES: 'SET_PROJECTS_TOTAL_PAGES',
+  SET_PROJECTS_FETCHING: 'SET_PROJECTS_FETCHING'
 };
 
 export default {
@@ -15,12 +16,13 @@ export default {
 		projectsArray: [],
 		totalPages: null,
 		currentPage: 1,
-    isFetching: false,
+		isFetching: false,
 	},
 	getters: {
 		getAllProjects: (state) => state.projectsArray,
 		getTotalPages: (state) => state.totalPages,
 		getCurrentPage: (state) => state.currentPage,
+		getFetching: (state) => state.isFetching,
 	},
 	mutations: {
 		[mutation.SET_PROJECTS_LIST]: (state, payload) => {
@@ -32,11 +34,15 @@ export default {
 		[mutation.SET_PROJECTS_CURRENT_PAGE]: (state, payload) => {
 			state.currentPage = payload;
 		},
+		[mutation.SET_PROJECTS_FETCHING]: (state, payload) => {
+			state.isFetching = payload;
+		},
 	},
 	actions: {
-		async getProjects(context, objData = {page:1}) {
-      // store.isFetching = true
-			
+		async getProjects(context, objData = { page: 1 }) {
+		
+      context.commit(mutation.SET_PROJECTS_FETCHING, true);
+
 			try {
 				if (!objData || !objData.page) {
 					throw new Error('Invalid data');
@@ -48,6 +54,9 @@ export default {
 					},
 				});
 				const result = await response.data;
+
+        context.commit(mutation.SET_PROJECTS_FETCHING, false);
+
 				console.log(result);
 				context.commit(mutation.SET_PROJECTS_LIST, result.projects);
 				context.commit(mutation.SET_PROJECTS_TOTAL_PAGES, result.total);

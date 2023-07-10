@@ -48,19 +48,15 @@ export default {
 	},
 	methods: {
 		nextPage() {
-			this.$emit('nextPage');
+			this.$emit('next-page');
 		},
 		prevPage() {
-			this.$emit('prevPage');
+			this.$emit('prev-page');
 		},
 		currentPageNext(page) {
 			if (page === '...') return;
 			this.$emit('current-page-next', page);
 		},
-		...mapActions({
-			setCurrentPage: 'ProjectModule/setCurrentPage',
-			setCurrentPage: 'TaskModule/setCurrentPage',
-		}),
 	},
 };
 </script>

@@ -42,16 +42,12 @@ export default {
 		Pagintations,
 		Loader,
 	},
-	data() {
-		return {
-			isFetching: false,
-		};
-	},
 	computed: {
 		...mapGetters({
 			allProjects: 'ProjectModule/getAllProjects',
 			totalPages: 'ProjectModule/getTotalPages',
 			currentPage: 'ProjectModule/getCurrentPage',
+			isFetching: 'ProjectModule/getFetching',
 		}),
 		...mapState({
 			isFetching: (state) => state.ProjectModule.isFetching,
@@ -63,13 +59,14 @@ export default {
 			setCurrentPage: 'ProjectModule/setCurrentPage',
 		}),
 		nextPage() {
-			// const page = this.currentPage + 1;
+      console.log('next')
 			if (this.currentPage === this.totalPages) return;
-			this.currentPage = this.currentPage + 1;
+			this.currentPageNext(this.currentPage + 1);
 		},
 		prevPage() {
+      console.log('prev')
 			if (this.currentPage === 1) return;
-			this.currentPage = this.currentPage - 1;
+			this.currentPageNext(this.currentPage - 1);
 		},
 		currentPageNext(page) {
 			this.setCurrentPage(page);
